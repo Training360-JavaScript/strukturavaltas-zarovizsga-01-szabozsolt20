@@ -1,1 +1,39 @@
-<p>app works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12 mt-3">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Material</th>
+            <th>Trade</th>
+            <th>Cost_code</th>
+            <th>Price</th>
+            <th>Active</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let construction of list$ | async">
+            <td>{{ construction.id }}</td>
+            <td>{{ construction.material }}</td>
+            <td>{{ construction.trade }}</td>
+            <td>{{ construction.cost_code }}</td>
+            <td>{{ construction.price }}</td>
+            <td>{{ construction.active }}</td>
+            <td>
+              <div class="btn-group">
+                <button (click)="onDelete(construction)" class="btn btn-danger">
+                  <i class="fa fa-trash"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+    </div>
+  </div>
+</div>
